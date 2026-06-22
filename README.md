@@ -1,86 +1,80 @@
 # FrontierIQ
- 
- > Your guide to the Microsoft 365 Copilot frontier.
- 
- FrontierIQ is an open coaching platform for IT administrators managing Microsoft 365 Copilot rollouts. It transforms raw usage data into clear, prioritized guidance — helping organizations move from activation to measurable, lasting impact.
- 
- ---
- 
- ## Why FrontierIQ?
- 
- Most organizations activate Microsoft 365 Copilot and then face the same questions:
- 
- - Are people actually using it?
- - Which licenses are sitting idle?
- - Where is adoption stuck — and why?
- - How do we prove value to the business?
- 
- FrontierIQ answers those questions and tells you **what to do next**.
- 
- ---
- 
- ## What it does
- 
- ### 🔍 Diagnose
- Surface adoption health across your tenant — by user, department, application, and time period. Know exactly where Copilot is thriving and where it isn't.
- 
- ### ⚠️ Identify blockers
- Spot inactive licenses, underperforming groups, and missing enablement before they become wasted spend.
- 
- ### 📋 Coach with next actions
- Receive prioritized, context-aware recommendations tailored to your current adoption stage — not generic advice.
- 
- ### 📊 Report to leadership
- Generate clear, executive-ready reports that demonstrate Copilot's business value and justify continued investment.
- 
- ### 🔄 Track progress over time
- Measure the impact of the actions you take. See adoption curves move. Know what works.
- 
- ---
- 
- ## Adoption lifecycle coverage
- 
- | Stage | What FrontierIQ helps with |
- |---|---|
- | **Deploy** | Validate rollout readiness, confirm license assignment |
- | **Activate** | Identify low-adoption areas, surface targeted enablement actions |
- | **Scale** | Expand to new departments with data-backed confidence |
- | **Sustain** | Continuously monitor health, prevent adoption decay |
- | **Frontier** | Guide organizations toward cutting-edge Copilot capabilities |
- 
- ---
- 
- ## Built on
- 
- - [Microsoft Graph API](https://learn.microsoft.com/en-us/graph/overview) — Copilot usage reports and user data
- - Microsoft 365 Copilot usage analytics
- - Designed for single-tenant and multi-tenant deployments
- 
- ---
- 
- ## Getting started
- 
- > Documentation coming soon.
- 
- ---
- 
- ## Roadmap
- 
- - [ ] Microsoft Graph authentication setup
- - [ ] Tenant usage data ingestion
- - [ ] Adoption health dashboard
- - [ ] Recommendation engine (v1)
- - [ ] Multi-tenant support
- - [ ] Executive reporting templates
- 
- ---
- 
- ## Contributing
- 
- Contributions, ideas, and feedback are welcome. Please open an issue to start a discussion before submitting a pull request.
- 
- ---
- 
- ## License
- 
- [MIT](LICENSE)
+
+> Your guide to the Microsoft 365 Copilot frontier.
+
+FrontierIQ is a coaching platform for IT administrators managing Microsoft 365 Copilot and Copilot agents. It turns visibility, governance, security, and cost data into clear, prioritized recommendations — so IT teams always know what to act on next.
+
+---
+
+## Why FrontierIQ?
+
+Organizations deploying Microsoft 365 Copilot face the same hard questions:
+
+- Are my agents and Copilot performing as expected?
+- Do I have the right guardrails and compliance posture in place?
+- Are identities, data access, and security risks under control?
+- Am I getting value from my investment — and where should I change?
+
+FrontierIQ coaches IT teams through all four dimensions, continuously.
+
+---
+
+## Four coaching pillars
+
+### 🔭 OBSERVE
+Gain visibility into agents and Copilot usage. Understand how they're used, by whom, and how often. Act quickly on performance, behavior, and risk signals before they become problems.
+
+### 🛡️ GOVERN
+Establish guardrails for agents and people. Onboard agents with full IT oversight. Govern agent access to resources and data. Stay audit-ready with built-in compliance tracking and data retention guidance.
+
+### 🔒 SECURE
+Secure agent identities and control access to resources. Prevent data oversharing and leaks. Defend against threats and vulnerabilities with enterprise-grade security coaching tailored to your Copilot environment.
+
+### 💡 OPTIMIZE
+Map costs to actual usage and value delivered. Identify underutilized licenses, over-provisioned access, and low-ROI agents. Receive specific, prioritized recommendations on what to change — and what impact to expect.
+
+---
+
+## Who it's for
+
+IT administrators and adoption leads responsible for Microsoft 365 Copilot and Copilot agent deployments — in single-tenant and multi-tenant environments.
+
+---
+
+## Built on
+
+- [Microsoft Graph API](https://learn.microsoft.com/en-us/graph/overview) — Copilot usage reports, agent activity, and user data
+- Microsoft 365 Copilot usage analytics
+- Designed for single-tenant and multi-tenant deployments
+
+---
+
+## Getting started
+
+> Documentation coming soon.
+
+---
+
+## Roadmap
+
+- [ ] Microsoft Graph authentication setup
+- [ ] Tenant usage data ingestion (OBSERVE)
+- [ ] Governance posture checks (GOVERN)
+- [ ] Security signal ingestion (SECURE)
+- [ ] Cost and value mapping (OPTIMIZE)
+- [ ] Recommendation engine (v1)
+- [ ] Multi-tenant support
+- [ ] Executive reporting
+
+---
+
+## Contributing
+
+Contributions, ideas, and feedback are welcome.  
+Please open an issue to start a discussion before submitting a pull request.
+
+---
+
+## License
+
+[MIT](LICENSE)
