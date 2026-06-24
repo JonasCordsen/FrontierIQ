@@ -29,6 +29,8 @@ Current unit suites:
 - `tests/govern/operator-playbooks.test.mjs`
 - `tests/govern/support-model.test.mjs`
 - `tests/govern/agent365-evaluation-roadmap.test.mjs`
+- `tests/govern/org-roles-raci.test.mjs`
+- `tests/govern/governance-matrix-risk-taxonomy.test.mjs`
 - `tests/optimize/cost-value-model.test.mjs`
 - `tests/optimize/maturity-and-priority.test.mjs`
 - `tests/optimize/executive-report.test.mjs`

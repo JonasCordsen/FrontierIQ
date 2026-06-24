@@ -17,3 +17,8 @@ export {
   buildRolloutCommunicationsPlan,
   summarizeTrainingAndCommunicationsReadiness,
 } from "./training-and-communications.mjs";
+export {
+  buildOrganizationRoleCatalog,
+  buildRaciMatrix,
+  summarizeRaciReadiness,
+} from "./org-roles-raci.mjs";

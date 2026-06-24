@@ -4,7 +4,7 @@ Documentation directory for developer and operator guides.
 
 Current design set:
 
-- `20-design.md` - cross-solution Phase 1 MVP architecture and contracts
+- `20-design.md` - FrontierIQ enterprise architecture: four-pillar module index, tenancy model, auth surface, and design decisions
 - `30-coverage-map.md` - Microsoft AI solution coverage matrix and phase status
 - `40-identity-permission-graph.md` - Phase 2 identity/permission graph model
 - `50-policy-baseline-library.md` - policy baseline profiles and evidence mappings
@@ -32,3 +32,6 @@ Current design set:
 - `270-training-and-communications.md` - deterministic training audience segmentation, curriculum, enablement artifacts, rollout communications phases, and readiness contracts
 - `280-support-model.md` - deterministic L1/L2/L3 support tiers, severity-based escalation policies, SLA targets, and support readiness contracts
 - `290-agent365-evaluation-roadmap.md` - deterministic Agent 365 capability tracking, weighted evaluation criteria, decision gates, integration milestones, and readiness contracts
+- `300-organization-roles-raci.md` - deterministic organization role catalog, RACI workstream assignments, and fail-closed readiness contracts
+- `310-governance-matrix-risk-taxonomy.md` - deterministic risk taxonomy, governance matrix mappings, review gates, policy-control expectations, and attestation cadence contracts
+- `320-module4-progress-rollup.md` - Module 4 completion evidence across compliance, control-system, privacy, operations, and operating-model slices
