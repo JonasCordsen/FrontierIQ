@@ -35,3 +35,9 @@ Current design set:
 - `300-organization-roles-raci.md` - deterministic organization role catalog, RACI workstream assignments, and fail-closed readiness contracts
 - `310-governance-matrix-risk-taxonomy.md` - deterministic risk taxonomy, governance matrix mappings, review gates, policy-control expectations, and attestation cadence contracts
 - `320-module4-progress-rollup.md` - Module 4 completion evidence across compliance, control-system, privacy, operations, and operating-model slices
+- `330-graph-reports-client.md` - Graph reports client request builders and response validators for M365 Copilot usage endpoints
+- `340-graph-audit-client.md` - Graph audit client request builders, response validators, and event classifier for audit log access
+- `350-multi-tenant-orchestrator.md` - Multi-tenant execution queue, rate-limit policy, priority classification, and orchestration summary contracts
+- `360-tenant-health-scorecard.md` - Unified per-tenant health scorecard with pillar weights, bands, score drivers, and delta contracts
+- `370-coach-action-aggregator.md` - Cross-pillar coach action aggregation, deduplication, ranking, filtering, and summary contracts
+- `380-tenant-briefing.md` - IT admin daily briefing payload with health headline, risk highlights, compliance alerts, and token-efficient summary
