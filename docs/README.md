@@ -59,3 +59,9 @@ Current design set:
 - `540-local-dev-server-scaffold.md` - local API server config, middleware, and startup planning contracts
 - `550-openapi-spec-builder.md` - OpenAPI 3.1 generation from route contracts
 - `560-github-ci-workflow.md` - GitHub Actions workflow for `node --test` validation on PRs and main
+- `570-api-host-adapter.md` - route matching and request dispatch contract from API routes to host handlers
+- `580-inmemory-tenant-repository.md` - immutable in-memory tenant repository contract for local/dev flows
+- `590-auth-middleware-contract.md` - bearer extraction and auth-guard wrapper contract for route handlers
+- `600-tenant-api-smoke-fixture-runner.md` - deterministic smoke fixture runner for tenant API list/get/upsert/readiness
+- `610-openapi-publication-contract.md` - OpenAPI artifact publication contract and summary generation
+- `620-release-workflow-contract.md` - tag-triggered release workflow with full tests and OpenAPI artifact upload
