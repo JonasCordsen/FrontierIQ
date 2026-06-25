@@ -27,6 +27,9 @@ Implemented foundation (Phase 2 start):
 - compliance gap analysis, evidence automation planning, and audit readiness pack (`compliance/audit-readiness.mjs`)
 - M365 Copilot Lesson 2 control-system posture, onboarding, RBAC, Key Vault, and CI/CD bundle (`control-system/m365-copilot-control-system.mjs`)
 - deterministic tenant onboarding bundle for app registration, Key Vault provisioning, resource templates, and onboarding scripts (`onboarding/tenant-onboarding.mjs`)
+- tenant onboarding workflow checkpoints and execution summary contract (`onboarding/tenant-onboarding-workflow-contract.mjs`)
+- compliance evidence export bundle contract for attestation workflows (`compliance/compliance-evidence-export-contract.mjs`)
+- deterministic governance rules engine contract for risk/control/reviewer decisioning (`operations/governance-rules-engine-contract.mjs`)
 
 Current state:
 

@@ -7,3 +7,8 @@ export {
   summarizeOvershareMetrics,
   validateDashboardApiPayload,
 } from "./metrics-dashboards.mjs";
+export {
+  buildTenantHealthTrendSeries,
+  summarizeTenantHealthTrends,
+  buildTenantHealthTrendEvidence,
+} from "./tenant-health-trends-contract.mjs";

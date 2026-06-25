@@ -20,6 +20,7 @@ Implemented foundation (Phase 1 MVP):
 - Work IQ registration, OBO/delegated user-context access contracts, `WorkIQAgent.Ask` validation, and mail/calendar/Teams readiness checks (`integration/work-iq.mjs`)
 - runtime ingestion pipeline contracts for webhook, delta reconciliation, Blob/OneLake staging, Foundry handoff, and telemetry (`ingestion/runtime-pipeline.mjs`)
 - Foundry IQ connector contracts for knowledge base/index/source/query flows with ACL and Purview validation (`ingestion/foundry-iq-connector.mjs`)
+- API performance metrics normalization and summary contract for latency/throughput/resource utilization evidence (`api/performance-metrics-contract.mjs`)
 
 Run unit tests:
 

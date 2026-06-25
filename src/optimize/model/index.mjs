@@ -3,6 +3,11 @@ export {
   detectBudgetAnomalies,
   validateCostValueRecord,
 } from "./cost-value-model.mjs";
+export {
+  mapUsageToCostAttribution,
+  summarizeCostAttributionByPillar,
+  buildCostAttributionEvidence,
+} from "./cost-attribution-adapter-contract.mjs";
 export { SHOWBACK_DIMENSIONS, validateShowbackDimensions } from "./showback-dimensions.mjs";
 export {
   buildMaturityScorecard,
