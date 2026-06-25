@@ -71,3 +71,9 @@ Current design set:
 - `660-openapi-docs-sync-contract.md` - docs index sync contract for generated OpenAPI artifact metadata
 - `670-release-notes-synthesis-contract.md` - deterministic release notes synthesis and markdown rendering contract
 - `680-request-telemetry-contract.md` - normalized API request/response telemetry and evidence envelope contract
+- `690-tenant-onboarding-workflow-contract.md` - deterministic onboarding workflow checkpoints, execution evaluation, and activation readiness summary contract
+- `700-tenant-health-trends-contract.md` - multi-period scorecard trend series, transition deltas, and trend evidence envelope contract
+- `710-cost-attribution-adapter-contract.md` - usage-to-cost attribution mapping by pillar and summarized cost/value evidence contract
+- `720-compliance-evidence-export-contract.md` - deterministic compliance and audit-readiness evidence export bundle contract for attestation
+- `730-performance-metrics-contract.md` - API latency/throughput/resource utilization normalization and health classification contract
+- `740-governance-rules-engine-contract.md` - deterministic risk/control/reviewer governance rules engine and decision evidence contract

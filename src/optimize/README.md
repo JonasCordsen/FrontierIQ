@@ -14,6 +14,8 @@ Implemented foundation:
 - metrics dashboard payloads for operations, value, Fabric/Power BI export, and REST integration (`reporting/metrics-dashboards.mjs`)
 - capacity and cost forecasting for Work IQ/Fabric IQ/Foundry IQ (`planning/capacity-planning.mjs`)
 - scenario use-case tracker + advisor (`planning/scenario-usecase-management.mjs`)
+- tenant health trends contract for multi-period scorecard deltas and trend evidence (`reporting/tenant-health-trends-contract.mjs`)
+- cost attribution adapter contract to map usage records to pillar-level cost/value evidence (`model/cost-attribution-adapter-contract.mjs`)
 
 Current state:
 
