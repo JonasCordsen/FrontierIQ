@@ -41,3 +41,21 @@ Current design set:
 - `360-tenant-health-scorecard.md` - Unified per-tenant health scorecard with pillar weights, bands, score drivers, and delta contracts
 - `370-coach-action-aggregator.md` - Cross-pillar coach action aggregation, deduplication, ranking, filtering, and summary contracts
 - `380-tenant-briefing.md` - IT admin daily briefing payload with health headline, risk highlights, compliance alerts, and token-efficient summary
+- `390-signal-correlator.md` - cross-pillar signal correlation with severity elevation by pillar overlap
+- `400-alert-threshold-engine.md` - threshold evaluation contracts and alert severity classification
+- `410-remediation-tracker.md` - remediation lifecycle state machine and overdue tracking
+- `420-scheduled-refresh-planner.md` - per-pillar refresh scheduling and staleness classification
+- `430-onboarding-assessment.md` - first-run onboarding checklist and readiness classification
+- `440-change-detector.md` - scorecard delta classification and regression detection
+- `450-entra-auth-validator.md` - decoded Entra token claim validation and fail-closed permission gating
+- `460-permission-scope-checker.md` - required Graph permission coverage checks by pillar
+- `470-api-route-builder.md` - typed API route contracts with per-route permission requirements
+- `480-api-response-formatter.md` - standard API response envelope contracts and status derivation
+- `490-powerbi-export-adapter.md` - Power BI push dataset schema and row-shaping contracts
+- `500-fabric-export-adapter.md` - Fabric lakehouse table schemas and export bundle contracts
+- `510-tenant-registry.md` - deterministic tenant registry model and lifecycle transition rules
+- `520-tenant-access-resolver.md` - fail-closed role/scope authorization decisions by tenant
+- `530-tenant-management-api.md` - tenant management route and handler contracts
+- `540-local-dev-server-scaffold.md` - local API server config, middleware, and startup planning contracts
+- `550-openapi-spec-builder.md` - OpenAPI 3.1 generation from route contracts
+- `560-github-ci-workflow.md` - GitHub Actions workflow for `node --test` validation on PRs and main
