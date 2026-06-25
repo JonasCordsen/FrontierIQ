@@ -23,6 +23,8 @@ Implemented foundation (Phase 1 MVP):
 - API performance metrics normalization and summary contract for latency/throughput/resource utilization evidence (`api/performance-metrics-contract.mjs`)
 - signal quality gate contract for normalized signal validation thresholds and quality scoring (`ingestion/signal-quality-gate-contract.mjs`)
 - tenant insights API payload contract for unified trend/cost/performance briefing response (`api/tenant-insights-api-contract.mjs`)
+- tenant insights diff contract for deterministic payload change deltas (`api/tenant-insights-diff-contract.mjs`)
+- source health scoring and outage classification contract for ingestion sources (`ingestion/source-health-contract.mjs`)
 
 Run unit tests:
 

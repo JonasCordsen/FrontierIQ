@@ -10,6 +10,7 @@ Implemented foundation (Phase 2 start):
 - policy baseline library (`policy/baseline-library.mjs`)
 - control catalog and evidence mappings (`policy/control-catalog.mjs`, `policy/evidence-mapping.mjs`)
 - shared machine-readable policy catalog for CI/CD, onboarding, and ingestion governance (`policy/policy-catalog.mjs`)
+- baseline-vs-runtime policy drift detector contract (`policy/policy-drift-detector-contract.mjs`)
 - AGT-aligned deterministic enforcement evaluator (`enforcement/policy-evaluator.mjs`)
 - structured decision traces (`enforcement/audit-trace.mjs`)
 - enterprise operating model kit (`operating-model/kit.mjs`)
@@ -32,6 +33,7 @@ Implemented foundation (Phase 2 start):
 - attestation window scheduling and overdue classification contract (`compliance/attestation-window-contract.mjs`)
 - deterministic governance rules engine contract for risk/control/reviewer decisioning (`operations/governance-rules-engine-contract.mjs`)
 - governance exception lifecycle and approval workflow contract (`operations/governance-exception-workflow-contract.mjs`)
+- review cadence orchestrator contract for deterministic governance schedule planning (`operations/review-cadence-orchestrator-contract.mjs`)
 
 Current state:
 
