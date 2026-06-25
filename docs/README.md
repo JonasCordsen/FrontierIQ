@@ -89,3 +89,9 @@ Current design set:
 - `840-value-realization-contract.md` - deterministic realized-vs-expected value scoring and trend health contract
 - `850-review-cadence-orchestrator-contract.md` - deterministic governance review cadence schedule and workload summary contract
 - `860-source-health-contract.md` - deterministic ingestion source health scoring and outage evidence contract
+- `870-recommendation-explainability-contract.md` - deterministic rationale traces and scoring factors for coach action explainability
+- `880-multi-tenant-fairness-guard-contract.md` - deterministic cross-tenant queue fairness checks and blocker evidence contract
+- `890-signal-lineage-contract.md` - deterministic source-to-action lineage graph and unresolved-link evidence contract
+- `900-operational-slo-contract.md` - deterministic SLO evaluation, burn-rate classification, and breach alert contract
+- `910-governance-waiver-registry-contract.md` - deterministic waiver registry, expiry enforcement, and ownership status contract
+- `920-executive-delta-briefing-contract.md` - deterministic period-over-period executive variance briefing and evidence contract

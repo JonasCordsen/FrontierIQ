@@ -34,6 +34,7 @@ Implemented foundation (Phase 2 start):
 - deterministic governance rules engine contract for risk/control/reviewer decisioning (`operations/governance-rules-engine-contract.mjs`)
 - governance exception lifecycle and approval workflow contract (`operations/governance-exception-workflow-contract.mjs`)
 - review cadence orchestrator contract for deterministic governance schedule planning (`operations/review-cadence-orchestrator-contract.mjs`)
+- governance waiver registry contract for deterministic waiver catalog, ownership, and expiry enforcement (`operations/governance-waiver-registry-contract.mjs`)
 
 Current state:
 

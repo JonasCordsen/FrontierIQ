@@ -25,6 +25,9 @@ Implemented foundation (Phase 1 MVP):
 - tenant insights API payload contract for unified trend/cost/performance briefing response (`api/tenant-insights-api-contract.mjs`)
 - tenant insights diff contract for deterministic payload change deltas (`api/tenant-insights-diff-contract.mjs`)
 - source health scoring and outage classification contract for ingestion sources (`ingestion/source-health-contract.mjs`)
+- multi-tenant fairness guard contract for cross-tenant prioritization distribution and blocker evidence (`graph/multi-tenant-fairness-guard-contract.mjs`)
+- signal lineage contract for source-to-action graph coverage and unresolved-link evidence (`ingestion/signal-lineage-contract.mjs`)
+- operational SLO contract for target compliance, burn-rate classification, and breach alert outputs (`api/operational-slo-contract.mjs`)
 
 Run unit tests:
 

@@ -18,6 +18,8 @@ Implemented foundation:
 - cost attribution adapter contract to map usage records to pillar-level cost/value evidence (`model/cost-attribution-adapter-contract.mjs`)
 - coach action delivery contract for deterministic API/email/Teams packaging and routing (`delivery/coach-action-delivery-contract.mjs`)
 - value realization contract for realized-vs-expected value trend health scoring (`reporting/value-realization-contract.mjs`)
+- recommendation explainability contract for deterministic rationale traces and scoring-factor evidence (`delivery/recommendation-explainability-contract.mjs`)
+- executive delta briefing contract for deterministic period-over-period variance briefings (`reporting/executive-delta-briefing-contract.mjs`)
 
 Current state:
 
