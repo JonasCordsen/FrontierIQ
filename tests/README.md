@@ -15,7 +15,9 @@ Current unit suites:
 - `tests/observe/foundry-iq-connector.test.mjs`
 - `tests/observe/performance-metrics-contract.test.mjs`
 - `tests/observe/signal-quality-gate-contract.test.mjs`
+- `tests/observe/source-health-contract.test.mjs`
 - `tests/observe/tenant-insights-api-contract.test.mjs`
+- `tests/observe/tenant-insights-diff-contract.test.mjs`
 - `tests/govern/identity-permission-graph.test.mjs`
 - `tests/govern/policy-baseline-library.test.mjs`
 - `tests/govern/policy-evaluator.test.mjs`
@@ -39,6 +41,8 @@ Current unit suites:
 - `tests/govern/governance-matrix-risk-taxonomy.test.mjs`
 - `tests/govern/governance-rules-engine-contract.test.mjs`
 - `tests/govern/governance-exception-workflow-contract.test.mjs`
+- `tests/govern/policy-drift-detector-contract.test.mjs`
+- `tests/govern/review-cadence-orchestrator-contract.test.mjs`
 - `tests/optimize/cost-value-model.test.mjs`
 - `tests/optimize/cost-attribution-adapter-contract.test.mjs`
 - `tests/optimize/maturity-and-priority.test.mjs`
@@ -48,9 +52,11 @@ Current unit suites:
 - `tests/optimize/scenario-usecase-management.test.mjs`
 - `tests/optimize/tenant-health-trends-contract.test.mjs`
 - `tests/optimize/coach-action-delivery-contract.test.mjs`
+- `tests/optimize/value-realization-contract.test.mjs`
 - `tests/secure/m365-copilot-privacy-posture.test.mjs`
 - `tests/secure/overshare-detection.test.mjs`
 - `tests/secure/incident-priority-contract.test.mjs`
+- `tests/secure/data-minimization-contract.test.mjs`
 - `tests/secure/siem-integration.test.mjs`
 
 Run:

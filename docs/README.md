@@ -83,3 +83,9 @@ Current design set:
 - `780-coach-action-delivery-contract.md` - deterministic coach action packaging, routing, and delivery readiness contract
 - `790-tenant-insights-api-contract.md` - unified tenant insights payload contract combining trend, cost, performance, and briefing surfaces
 - `800-attestation-window-contract.md` - deterministic attestation window scheduling and overdue classification evidence contract
+- `810-tenant-insights-diff-contract.md` - deterministic tenant insights payload diff and change evidence contract
+- `820-policy-drift-detector-contract.md` - deterministic baseline-vs-runtime policy drift detection and evidence contract
+- `830-data-minimization-contract.md` - deterministic PII minimization/redaction policy contract and audit envelope
+- `840-value-realization-contract.md` - deterministic realized-vs-expected value scoring and trend health contract
+- `850-review-cadence-orchestrator-contract.md` - deterministic governance review cadence schedule and workload summary contract
+- `860-source-health-contract.md` - deterministic ingestion source health scoring and outage evidence contract
