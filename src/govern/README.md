@@ -29,7 +29,9 @@ Implemented foundation (Phase 2 start):
 - deterministic tenant onboarding bundle for app registration, Key Vault provisioning, resource templates, and onboarding scripts (`onboarding/tenant-onboarding.mjs`)
 - tenant onboarding workflow checkpoints and execution summary contract (`onboarding/tenant-onboarding-workflow-contract.mjs`)
 - compliance evidence export bundle contract for attestation workflows (`compliance/compliance-evidence-export-contract.mjs`)
+- attestation window scheduling and overdue classification contract (`compliance/attestation-window-contract.mjs`)
 - deterministic governance rules engine contract for risk/control/reviewer decisioning (`operations/governance-rules-engine-contract.mjs`)
+- governance exception lifecycle and approval workflow contract (`operations/governance-exception-workflow-contract.mjs`)
 
 Current state:
 

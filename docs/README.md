@@ -77,3 +77,9 @@ Current design set:
 - `720-compliance-evidence-export-contract.md` - deterministic compliance and audit-readiness evidence export bundle contract for attestation
 - `730-performance-metrics-contract.md` - API latency/throughput/resource utilization normalization and health classification contract
 - `740-governance-rules-engine-contract.md` - deterministic risk/control/reviewer governance rules engine and decision evidence contract
+- `750-signal-quality-gate-contract.md` - deterministic normalized-signal quality gate with threshold checks and quality scoring evidence
+- `760-governance-exception-workflow-contract.md` - deterministic exception lifecycle transitions, expiry checks, and portfolio readiness summary
+- `770-overshare-incident-priority-contract.md` - deterministic overshare incident priority scoring and triage queue contract
+- `780-coach-action-delivery-contract.md` - deterministic coach action packaging, routing, and delivery readiness contract
+- `790-tenant-insights-api-contract.md` - unified tenant insights payload contract combining trend, cost, performance, and briefing surfaces
+- `800-attestation-window-contract.md` - deterministic attestation window scheduling and overdue classification evidence contract

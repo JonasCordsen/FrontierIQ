@@ -21,6 +21,8 @@ Implemented foundation (Phase 1 MVP):
 - runtime ingestion pipeline contracts for webhook, delta reconciliation, Blob/OneLake staging, Foundry handoff, and telemetry (`ingestion/runtime-pipeline.mjs`)
 - Foundry IQ connector contracts for knowledge base/index/source/query flows with ACL and Purview validation (`ingestion/foundry-iq-connector.mjs`)
 - API performance metrics normalization and summary contract for latency/throughput/resource utilization evidence (`api/performance-metrics-contract.mjs`)
+- signal quality gate contract for normalized signal validation thresholds and quality scoring (`ingestion/signal-quality-gate-contract.mjs`)
+- tenant insights API payload contract for unified trend/cost/performance briefing response (`api/tenant-insights-api-contract.mjs`)
 
 Run unit tests:
 
