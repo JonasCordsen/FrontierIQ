@@ -16,6 +16,7 @@ Implemented foundation:
 - scenario use-case tracker + advisor (`planning/scenario-usecase-management.mjs`)
 - tenant health trends contract for multi-period scorecard deltas and trend evidence (`reporting/tenant-health-trends-contract.mjs`)
 - cost attribution adapter contract to map usage records to pillar-level cost/value evidence (`model/cost-attribution-adapter-contract.mjs`)
+- coach action delivery contract for deterministic API/email/Teams packaging and routing (`delivery/coach-action-delivery-contract.mjs`)
 
 Current state:
 
