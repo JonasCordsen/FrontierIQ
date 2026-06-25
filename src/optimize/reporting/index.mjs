@@ -12,3 +12,8 @@ export {
   summarizeTenantHealthTrends,
   buildTenantHealthTrendEvidence,
 } from "./tenant-health-trends-contract.mjs";
+export {
+  buildExecutiveDeltaBriefing,
+  summarizeExecutiveVariance,
+  buildExecutiveDeltaEvidence,
+} from "./executive-delta-briefing-contract.mjs";
