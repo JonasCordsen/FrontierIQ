@@ -9,6 +9,8 @@ Implemented baseline:
 - data minimization and PII redaction policy contract (`privacy/data-minimization-contract.mjs`)
 - overshare detection contracts for ingestion scanning, query exposure scoring, and deterministic throttle/suspend workflows (`overshare/overshare-detection.mjs`)
 - overshare incident priority scoring and triage queue contract (`overshare/incident-priority-contract.mjs`)
+- access anomaly triage contract for deterministic identity anomaly severity and playbook response mapping (`permissions/access-anomaly-triage-contract.mjs`)
+- prompt-injection signal contract for deterministic unsafe prompt risk scoring and containment actions (`overshare/prompt-injection-signal-contract.mjs`)
 - SIEM integration contracts for governance decisions, overshare incidents, alert routing, and typed revocation/containment playbooks (`siem/siem-integration.mjs`)
 
 Next:

@@ -35,6 +35,7 @@ Implemented foundation (Phase 2 start):
 - governance exception lifecycle and approval workflow contract (`operations/governance-exception-workflow-contract.mjs`)
 - review cadence orchestrator contract for deterministic governance schedule planning (`operations/review-cadence-orchestrator-contract.mjs`)
 - governance waiver registry contract for deterministic waiver catalog, ownership, and expiry enforcement (`operations/governance-waiver-registry-contract.mjs`)
+- governance waiver audit trail contract for deterministic waiver change logging and approval-lineage evidence (`operations/governance-waiver-audit-trail-contract.mjs`)
 
 Current state:
 

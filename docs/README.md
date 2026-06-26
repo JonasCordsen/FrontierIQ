@@ -95,3 +95,10 @@ Current design set:
 - `900-operational-slo-contract.md` - deterministic SLO evaluation, burn-rate classification, and breach alert contract
 - `910-governance-waiver-registry-contract.md` - deterministic waiver registry, expiry enforcement, and ownership status contract
 - `920-executive-delta-briefing-contract.md` - deterministic period-over-period executive variance briefing and evidence contract
+- `930-access-anomaly-triage-contract.md` - deterministic identity anomaly severity scoring and response playbook mapping contract
+- `940-prompt-injection-signal-contract.md` - deterministic prompt-injection risk classification and containment action contract
+- `950-cross-tenant-benchmark-contract.md` - deterministic percentile benchmarking contract across tenant cohorts
+- `960-governance-waiver-audit-trail-contract.md` - deterministic waiver lifecycle audit-trail and approval-lineage evidence contract
+- `970-ingestion-replay-recovery-contract.md` - deterministic ingestion replay window planning, dedupe checks, and backlog-clearance evidence contract
+- `980-recommendation-impact-simulation-contract.md` - deterministic coach-action impact simulation across baseline KPIs
+- `990-current-state-view-contract.md` - deterministic local command contract to view current cross-pillar state

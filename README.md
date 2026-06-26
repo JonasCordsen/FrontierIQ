@@ -51,7 +51,18 @@ IT administrators and adoption leads responsible for Microsoft 365 Copilot and C
 
 ## Getting started
 
-> Documentation coming soon.
+Run the full deterministic test suite:
+
+```bash
+node --test $(find tests -name '*.test.mjs' | sort)
+```
+
+View a deterministic current-state snapshot:
+
+```bash
+node src/observe/api/current-state-view-cli.mjs
+node src/observe/api/current-state-view-cli.mjs --json
+```
 
 ---
 

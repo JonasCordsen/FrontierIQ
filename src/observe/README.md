@@ -28,6 +28,8 @@ Implemented foundation (Phase 1 MVP):
 - multi-tenant fairness guard contract for cross-tenant prioritization distribution and blocker evidence (`graph/multi-tenant-fairness-guard-contract.mjs`)
 - signal lineage contract for source-to-action graph coverage and unresolved-link evidence (`ingestion/signal-lineage-contract.mjs`)
 - operational SLO contract for target compliance, burn-rate classification, and breach alert outputs (`api/operational-slo-contract.mjs`)
+- ingestion replay recovery contract for replay-window planning, dedupe safety checks, and backlog-clearance evidence (`ingestion/ingestion-replay-recovery-contract.mjs`)
+- current-state view contract and local CLI wrapper for deterministic cross-pillar state snapshots (`api/current-state-view-contract.mjs`, `api/current-state-view-cli.mjs`)
 
 Run unit tests:
 

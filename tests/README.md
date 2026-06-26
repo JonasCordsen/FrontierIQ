@@ -19,6 +19,8 @@ Current unit suites:
 - `tests/observe/multi-tenant-fairness-guard-contract.test.mjs`
 - `tests/observe/signal-lineage-contract.test.mjs`
 - `tests/observe/operational-slo-contract.test.mjs`
+- `tests/observe/ingestion-replay-recovery-contract.test.mjs`
+- `tests/observe/current-state-view-contract.test.mjs`
 - `tests/observe/tenant-insights-api-contract.test.mjs`
 - `tests/observe/tenant-insights-diff-contract.test.mjs`
 - `tests/govern/identity-permission-graph.test.mjs`
@@ -47,6 +49,7 @@ Current unit suites:
 - `tests/govern/policy-drift-detector-contract.test.mjs`
 - `tests/govern/review-cadence-orchestrator-contract.test.mjs`
 - `tests/govern/governance-waiver-registry-contract.test.mjs`
+- `tests/govern/governance-waiver-audit-trail-contract.test.mjs`
 - `tests/optimize/cost-value-model.test.mjs`
 - `tests/optimize/cost-attribution-adapter-contract.test.mjs`
 - `tests/optimize/maturity-and-priority.test.mjs`
@@ -59,11 +62,15 @@ Current unit suites:
 - `tests/optimize/value-realization-contract.test.mjs`
 - `tests/optimize/recommendation-explainability-contract.test.mjs`
 - `tests/optimize/executive-delta-briefing-contract.test.mjs`
+- `tests/optimize/cross-tenant-benchmark-contract.test.mjs`
+- `tests/optimize/recommendation-impact-simulation-contract.test.mjs`
 - `tests/secure/m365-copilot-privacy-posture.test.mjs`
 - `tests/secure/overshare-detection.test.mjs`
 - `tests/secure/incident-priority-contract.test.mjs`
 - `tests/secure/data-minimization-contract.test.mjs`
 - `tests/secure/siem-integration.test.mjs`
+- `tests/secure/access-anomaly-triage-contract.test.mjs`
+- `tests/secure/prompt-injection-signal-contract.test.mjs`
 
 Run:
 

@@ -20,6 +20,8 @@ Implemented foundation:
 - value realization contract for realized-vs-expected value trend health scoring (`reporting/value-realization-contract.mjs`)
 - recommendation explainability contract for deterministic rationale traces and scoring-factor evidence (`delivery/recommendation-explainability-contract.mjs`)
 - executive delta briefing contract for deterministic period-over-period variance briefings (`reporting/executive-delta-briefing-contract.mjs`)
+- cross-tenant benchmark contract for deterministic cohort percentile benchmarking (`reporting/cross-tenant-benchmark-contract.mjs`)
+- recommendation impact simulation contract for deterministic before/after KPI projection (`model/recommendation-impact-simulation-contract.mjs`)
 
 Current state:
 
