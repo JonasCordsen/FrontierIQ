@@ -17,3 +17,8 @@ export {
   summarizeExecutiveVariance,
   buildExecutiveDeltaEvidence,
 } from "./executive-delta-briefing-contract.mjs";
+export {
+  buildBenchmarkCohorts,
+  calculateTenantPercentiles,
+  buildCrossTenantBenchmarkSummary,
+} from "./cross-tenant-benchmark-contract.mjs";

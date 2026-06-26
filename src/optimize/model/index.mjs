@@ -22,3 +22,8 @@ export {
   buildExecutiveReport,
   validateExecutiveReport,
 } from "../reporting/executive-report.mjs";
+export {
+  simulateRecommendationImpact,
+  simulatePortfolioImpact,
+  summarizeImpactSimulation,
+} from "./recommendation-impact-simulation-contract.mjs";
