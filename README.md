@@ -81,8 +81,11 @@ node src/observe/api/current-state-view-cli.mjs --json
 
 ## Contributing
 
-Contributions, ideas, and feedback are welcome.  
-Please open an issue to start a discussion before submitting a pull request.
+Contributions, ideas, and feedback are welcome.
+
+- Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request.
+- Follow [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) in issues, pull requests, and reviews.
+- Report vulnerabilities through [SECURITY.md](SECURITY.md), not public issues.
 
 ---
 

@@ -4,18 +4,23 @@ on:
   push:
     tags:
       - 'v*'
-  workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   release-validate:
+    if: startsWith(github.ref, 'refs/tags/v')
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          persist-credentials: false
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: 22
 
@@ -28,7 +33,9 @@ jobs:
           node --input-type=module -e "import { buildOpenApiPublicationBundle } from './src/optimize/delivery/openapi-publication-contract.mjs'; const bundle = buildOpenApiPublicationBundle({ generatedAt: '1970-01-01T00:00:00.000Z' }); await import('node:fs/promises').then(fs => fs.writeFile('artifacts/frontieriq-openapi.json', bundle.artifact.content, 'utf8')); await import('node:fs/promises').then(fs => fs.writeFile('artifacts/frontieriq-openapi-summary.json', JSON.stringify(bundle.summary, null, 2), 'utf8'));"
 
       - name: Upload release artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: frontieriq-release-artifacts
           path: artifacts/
+          if-no-files-found: error
+          retention-days: 30
