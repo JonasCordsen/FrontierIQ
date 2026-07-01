@@ -1,8 +1,17 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { jwtVerify, createRemoteJWKSet } from 'jose';
+import {
+  extractUserContext,
+  validateTenantAccess,
+  logAuthorizationDecision,
+  DEFAULT_RBAC_CONFIG,
+  enrichUserContextWithGraph,
+} from '../../lib/rbac';
 
-// Protected API endpoint that proxies the repo's current-state contract and enforces strict JWKS + role checks.
-// Validates token signature, issuer, audience, and required role claim.
+// Protected API endpoint that proxies the repo's current-state contract
+// Enforces strict JWKS token validation + server-side RBAC
+// Validates token signature, issuer, audience, and role claims
+// Enforces per-tenant access control
 
 const TENANT_ID = process.env.NEXT_PUBLIC_AZURE_TENANT_ID || 'common';
 const CLIENT_ID = process.env.NEXT_PUBLIC_AZURE_CLIENT_ID || '';
@@ -25,25 +34,39 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
   const incomingToken = auth.replace(/^Bearer\s+/i, '').trim();
 
+  // Extract requested tenant from query parameter (defaults to TENANT_ID from env)
+  const requestedTenantId = (req.query.tenantId as string) || TENANT_ID;
+
   // Verify token signature and claims using JWKS
+  let verified: any;
   try {
     const jwks = getJWKS();
-    const verified = await jwtVerify(incomingToken, jwks, {
+    verified = await jwtVerify(incomingToken, jwks, {
       issuer: `https://login.microsoftonline.com/${TENANT_ID}/v2.0`,
       audience: CLIENT_ID,
     });
-
-    // Check for required role claim
-    const claims = verified.payload as Record<string, any>;
-    const roles = claims.roles || claims.role || [];
-    const allowed = Array.isArray(roles) ? roles.includes('FrontierIQ.Admin') : roles === 'FrontierIQ.Admin';
-    if (!allowed) {
-      return res.status(403).json({ error: 'Insufficient role: FrontierIQ.Admin required' });
-    }
   } catch (e) {
     const error = e as Error;
     console.error('Token verification failed:', error.message);
     return res.status(401).json({ error: 'Invalid or expired token' });
+  }
+
+  // Extract user context from token claims
+  const userContext = extractUserContext(verified, requestedTenantId);
+  if (!userContext) {
+    logAuthorizationDecision(
+      {
+        allowed: false,
+        reason: 'Failed to extract user context from token',
+        tenantId: requestedTenantId,
+      },
+      {
+        endpoint: req.url || '/api/protected-current-state',
+        method: 'GET',
+        timestamp: new Date(),
+      }
+    );
+    return res.status(401).json({ error: 'Failed to extract user information' });
   }
 
   // On-Behalf-Of: exchange incoming user token for a new token with MSAL Node (requires AZURE_CLIENT_SECRET env var)
@@ -52,7 +75,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   try {
     const { ConfidentialClientApplication } = await import('@azure/msal-node');
     const clientSecret = process.env.AZURE_CLIENT_SECRET || process.env.NEXT_PUBLIC_AZURE_CLIENT_SECRET || '';
-    
+
     if (!clientSecret) {
       console.warn('AZURE_CLIENT_SECRET not configured; OBO exchange skipped');
     } else {
@@ -83,11 +106,40 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     // In a production system with Graph API calls, you may want to return 500 or 401 here.
   }
 
-  // Import the current-state contract from the repo and execute it to build a snapshot.
+  // Enrich user context with Graph lookups when we have an OBO token.
+  const effectiveUserContext = backendToken
+    ? await enrichUserContextWithGraph(userContext, backendToken)
+    : userContext;
+
+  // Validate tenant access using RBAC engine.
+  const rbacDecision = validateTenantAccess(effectiveUserContext, requestedTenantId, DEFAULT_RBAC_CONFIG);
+  logAuthorizationDecision(rbacDecision, {
+    endpoint: req.url || '/api/protected-current-state',
+    method: 'GET',
+    timestamp: new Date(),
+  });
+
+  if (!rbacDecision.allowed) {
+    return res.status(403).json({
+      error: 'Access denied',
+      reason: rbacDecision.reason,
+    });
+  }
+
+  // Build snapshot with tenant context
+  // Pass user context and tenant info to the contract executor
   try {
     // @ts-ignore - dynamic import of .mjs file without type declarations
     const mod = await import('../../../src/observe/api/current-state-view-contract.mjs');
-    const result = mod.executeCurrentStateViewCommand(['--json']);
+
+    // Build snapshot with tenant-specific context
+    const result = mod.executeCurrentStateViewCommand(['--json'], {
+      tenantId: requestedTenantId,
+      userId: effectiveUserContext.userId,
+      userRole: effectiveUserContext.primaryRole.role,
+      accessLevel: effectiveUserContext.accessLevel,
+    });
+
     return res.status(200).json(result.snapshot);
   } catch (err) {
     const error = err as Error;
