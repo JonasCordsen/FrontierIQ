@@ -90,11 +90,11 @@ jobs:
           NEXT_PUBLIC_AZURE_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_AZURE_CLIENT_ID }}
 
       - name: Skip staging deploy when token is missing
-        if: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN == '' }}
+        if: ${{ env.AZURE_STATIC_WEB_APPS_API_TOKEN == '' }}
         run: echo "Skipping staging deploy: AZURE_STATIC_WEB_APPS_API_TOKEN is not configured."
 
       - name: Deploy to Azure Static Web Apps (Preview)
-        if: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN != '' }}
+        if: ${{ env.AZURE_STATIC_WEB_APPS_API_TOKEN != '' }}
         uses: Azure/static-web-apps-deploy@v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
@@ -136,11 +136,11 @@ jobs:
           NEXT_PUBLIC_AZURE_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_AZURE_CLIENT_ID }}
 
       - name: Skip production deploy when token is missing
-        if: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN == '' }}
+        if: ${{ env.AZURE_STATIC_WEB_APPS_API_TOKEN == '' }}
         run: echo "Skipping production deploy: AZURE_STATIC_WEB_APPS_API_TOKEN is not configured."
 
       - name: Deploy to Azure Static Web Apps (Production)
-        if: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN != '' }}
+        if: ${{ env.AZURE_STATIC_WEB_APPS_API_TOKEN != '' }}
         uses: Azure/static-web-apps-deploy@v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
@@ -151,7 +151,7 @@ jobs:
           skip_app_build: true
 
       - name: Comment on commit
-        if: success() && secrets.AZURE_STATIC_WEB_APPS_API_TOKEN != ''
+        if: success() && env.AZURE_STATIC_WEB_APPS_API_TOKEN != ''
         uses: actions/github-script@v7
         with:
           script: |
