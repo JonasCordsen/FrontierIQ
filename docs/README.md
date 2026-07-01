@@ -1,3 +1,105 @@
 # Docs
 
-Documentation directory for developer and operator guides. Start with architecture and deployment notes.
+Documentation directory for developer and operator guides.
+
+Current design set:
+
+- `20-design.md` - FrontierIQ enterprise architecture: four-pillar module index, tenancy model, auth surface, and design decisions
+- `30-coverage-map.md` - Microsoft AI solution coverage matrix and phase status
+- `40-identity-permission-graph.md` - Phase 2 identity/permission graph model
+- `50-policy-baseline-library.md` - policy baseline profiles and evidence mappings
+- `60-agt-aligned-enforcement.md` - deterministic governance decision layer
+- `70-cost-value-model.md` - unified cross-solution cost/value attribution model
+- `80-maturity-and-next-best-action.md` - maturity scoring and prioritized recommendation engine
+- `90-enterprise-operating-model-kit.md` - CoE/RACI/attestation/exception/audit-pack baseline
+- `100-executive-reporting.md` - executive summary payload contract and validation
+- `110-governance-operations-and-capacity-planning.md` - approval board, lifecycle, registry/validator, and capacity forecast implementation
+- `120-scenario-library-integration.md` - include/track/advise integration model for Microsoft Scenario Library use cases
+- `130-m365-copilot-compliance-and-certifications.md` - Lesson 1 compliance certification inventory, control mapping, evidence, and reporting
+- `140-m365-copilot-control-system.md` - Lesson 2 control-system posture, RBAC, onboarding, Key Vault, policy-as-code, and CI/CD controls
+- `150-m365-copilot-privacy-and-data-processing.md` - Lesson 3 privacy posture, residency, Purview labels, PII handling, consent, and retention workflow
+- `160-runtime-ingestion-poc.md` - webhook/reconcile ingestion contracts, raw staging, Foundry handoff, and telemetry/cost PoC
+- `170-foundry-iq-connector.md` - Foundry knowledge base/index/source/query connector with ACL and Purview validation
+- `180-tenant-onboarding-automation.md` - deterministic onboarding bundle, Key Vault manifest, tenant template contract, and automation scripts
+- `190-overshare-detection.md` - ingestion/query overshare scanning, risk scoring, and deterministic enforcement workflows
+- `200-policy-catalog.md` - shared machine-readable catalog for CI/CD, onboarding, and ingestion governance rules
+- `210-fabric-iq-integration.md` - Fabric IQ registration, ontology/data-agent contracts, NL2Ontology validation, and semantic-model access readiness
+- `220-work-iq-integration.md` - Work IQ registration, OBO/delegated access, `WorkIQAgent.Ask` validation, and mail/calendar/Teams user-context readiness
+- `230-siem-integration.md` - SIEM forwarding contracts for governance decisions, overshare incidents/enforcement, alert routing, and typed incident playbooks
+- `240-metrics-dashboards.md` - operations/value dashboard contracts for freshness, ingestion lag, invocations, overshare, license utilization, ROI, and API export
+- `250-operator-playbooks.md` - deterministic runbook templates and execution contracts for onboarding, incident response, token rotation, index rehydration, and tenant suspend/revoke
+- `260-agents-coe.md` - deterministic Agents CoE charter, role model, operating cadence, and onboarding template contracts
+- `270-training-and-communications.md` - deterministic training audience segmentation, curriculum, enablement artifacts, rollout communications phases, and readiness contracts
+- `280-support-model.md` - deterministic L1/L2/L3 support tiers, severity-based escalation policies, SLA targets, and support readiness contracts
+- `290-agent365-evaluation-roadmap.md` - deterministic Agent 365 capability tracking, weighted evaluation criteria, decision gates, integration milestones, and readiness contracts
+- `300-organization-roles-raci.md` - deterministic organization role catalog, RACI workstream assignments, and fail-closed readiness contracts
+- `310-governance-matrix-risk-taxonomy.md` - deterministic risk taxonomy, governance matrix mappings, review gates, policy-control expectations, and attestation cadence contracts
+- `320-module4-progress-rollup.md` - Module 4 completion evidence across compliance, control-system, privacy, operations, and operating-model slices
+- `330-graph-reports-client.md` - Graph reports client request builders and response validators for M365 Copilot usage endpoints
+- `340-graph-audit-client.md` - Graph audit client request builders, response validators, and event classifier for audit log access
+- `350-multi-tenant-orchestrator.md` - Multi-tenant execution queue, rate-limit policy, priority classification, and orchestration summary contracts
+- `360-tenant-health-scorecard.md` - Unified per-tenant health scorecard with pillar weights, bands, score drivers, and delta contracts
+- `370-coach-action-aggregator.md` - Cross-pillar coach action aggregation, deduplication, ranking, filtering, and summary contracts
+- `380-tenant-briefing.md` - IT admin daily briefing payload with health headline, risk highlights, compliance alerts, and token-efficient summary
+- `390-signal-correlator.md` - cross-pillar signal correlation with severity elevation by pillar overlap
+- `400-alert-threshold-engine.md` - threshold evaluation contracts and alert severity classification
+- `410-remediation-tracker.md` - remediation lifecycle state machine and overdue tracking
+- `420-scheduled-refresh-planner.md` - per-pillar refresh scheduling and staleness classification
+- `430-onboarding-assessment.md` - first-run onboarding checklist and readiness classification
+- `440-change-detector.md` - scorecard delta classification and regression detection
+- `450-entra-auth-validator.md` - decoded Entra token claim validation and fail-closed permission gating
+- `460-permission-scope-checker.md` - required Graph permission coverage checks by pillar
+- `470-api-route-builder.md` - typed API route contracts with per-route permission requirements
+- `480-api-response-formatter.md` - standard API response envelope contracts and status derivation
+- `490-powerbi-export-adapter.md` - Power BI push dataset schema and row-shaping contracts
+- `500-fabric-export-adapter.md` - Fabric lakehouse table schemas and export bundle contracts
+- `510-tenant-registry.md` - deterministic tenant registry model and lifecycle transition rules
+- `520-tenant-access-resolver.md` - fail-closed role/scope authorization decisions by tenant
+- `530-tenant-management-api.md` - tenant management route and handler contracts
+- `540-local-dev-server-scaffold.md` - local API server config, middleware, and startup planning contracts
+- `550-openapi-spec-builder.md` - OpenAPI 3.1 generation from route contracts
+- `560-github-ci-workflow.md` - GitHub Actions workflow for `node --test` validation on PRs and main
+- `570-api-host-adapter.md` - route matching and request dispatch contract from API routes to host handlers
+- `580-inmemory-tenant-repository.md` - immutable in-memory tenant repository contract for local/dev flows
+- `590-auth-middleware-contract.md` - bearer extraction and auth-guard wrapper contract for route handlers
+- `600-tenant-api-smoke-fixture-runner.md` - deterministic smoke fixture runner for tenant API list/get/upsert/readiness
+- `610-openapi-publication-contract.md` - OpenAPI artifact publication contract and summary generation
+- `620-release-workflow-contract.md` - tag-triggered release workflow with full tests and OpenAPI artifact upload
+- `625-codeql-analysis-workflow.md` - CodeQL scanning workflow with scheduled and pull-request coverage
+- `630-http-runtime-adapter.md` - executable request pipeline contract binding route resolution, auth checks, dispatch, and telemetry
+- `640-tenant-repository-persistence-adapter.md` - deterministic tenant repository snapshot serialization/deserialization contract
+- `650-cli-smoke-command-contract.md` - deterministic CLI contract for local tenant API smoke execution
+- `660-openapi-docs-sync-contract.md` - docs index sync contract for generated OpenAPI artifact metadata
+- `670-release-notes-synthesis-contract.md` - deterministic release notes synthesis and markdown rendering contract
+- `680-request-telemetry-contract.md` - normalized API request/response telemetry and evidence envelope contract
+- `690-tenant-onboarding-workflow-contract.md` - deterministic onboarding workflow checkpoints, execution evaluation, and activation readiness summary contract
+- `700-tenant-health-trends-contract.md` - multi-period scorecard trend series, transition deltas, and trend evidence envelope contract
+- `710-cost-attribution-adapter-contract.md` - usage-to-cost attribution mapping by pillar and summarized cost/value evidence contract
+- `720-compliance-evidence-export-contract.md` - deterministic compliance and audit-readiness evidence export bundle contract for attestation
+- `730-performance-metrics-contract.md` - API latency/throughput/resource utilization normalization and health classification contract
+- `740-governance-rules-engine-contract.md` - deterministic risk/control/reviewer governance rules engine and decision evidence contract
+- `750-signal-quality-gate-contract.md` - deterministic normalized-signal quality gate with threshold checks and quality scoring evidence
+- `760-governance-exception-workflow-contract.md` - deterministic exception lifecycle transitions, expiry checks, and portfolio readiness summary
+- `770-overshare-incident-priority-contract.md` - deterministic overshare incident priority scoring and triage queue contract
+- `780-coach-action-delivery-contract.md` - deterministic coach action packaging, routing, and delivery readiness contract
+- `790-tenant-insights-api-contract.md` - unified tenant insights payload contract combining trend, cost, performance, and briefing surfaces
+- `800-attestation-window-contract.md` - deterministic attestation window scheduling and overdue classification evidence contract
+- `810-tenant-insights-diff-contract.md` - deterministic tenant insights payload diff and change evidence contract
+- `820-policy-drift-detector-contract.md` - deterministic baseline-vs-runtime policy drift detection and evidence contract
+- `830-data-minimization-contract.md` - deterministic PII minimization/redaction policy contract and audit envelope
+- `840-value-realization-contract.md` - deterministic realized-vs-expected value scoring and trend health contract
+- `850-review-cadence-orchestrator-contract.md` - deterministic governance review cadence schedule and workload summary contract
+- `860-source-health-contract.md` - deterministic ingestion source health scoring and outage evidence contract
+- `870-recommendation-explainability-contract.md` - deterministic rationale traces and scoring factors for coach action explainability
+- `880-multi-tenant-fairness-guard-contract.md` - deterministic cross-tenant queue fairness checks and blocker evidence contract
+- `890-signal-lineage-contract.md` - deterministic source-to-action lineage graph and unresolved-link evidence contract
+- `900-operational-slo-contract.md` - deterministic SLO evaluation, burn-rate classification, and breach alert contract
+- `910-governance-waiver-registry-contract.md` - deterministic waiver registry, expiry enforcement, and ownership status contract
+- `920-executive-delta-briefing-contract.md` - deterministic period-over-period executive variance briefing and evidence contract
+- `930-access-anomaly-triage-contract.md` - deterministic identity anomaly severity scoring and response playbook mapping contract
+- `940-prompt-injection-signal-contract.md` - deterministic prompt-injection risk classification and containment action contract
+- `950-cross-tenant-benchmark-contract.md` - deterministic percentile benchmarking contract across tenant cohorts
+- `960-governance-waiver-audit-trail-contract.md` - deterministic waiver lifecycle audit-trail and approval-lineage evidence contract
+- `970-ingestion-replay-recovery-contract.md` - deterministic ingestion replay window planning, dedupe checks, and backlog-clearance evidence contract
+- `980-recommendation-impact-simulation-contract.md` - deterministic coach-action impact simulation across baseline KPIs
+- `990-current-state-view-contract.md` - deterministic local command contract to view current cross-pillar state

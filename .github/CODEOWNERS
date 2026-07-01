@@ -1,0 +1,7 @@
+# Default ownership for repository review routing.
+* @JonasCordsen
+
+.github/ @JonasCordsen
+docs/ @JonasCordsen
+src/ @JonasCordsen
+tests/ @JonasCordsen

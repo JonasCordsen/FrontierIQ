@@ -2,4 +2,17 @@
 
 Purpose: implement agent identity checks, access control evaluations, and oversharing detection.
 
-TODO: add auth integrations, policy enforcement hooks, and security tests.
+Implemented baseline:
+
+- high-risk permission matcher rules (`permissions/high-risk-rules.mjs`)
+- M365 Copilot Lesson 3 privacy posture for residency, Purview labels, PII detection, consent, and retention (`privacy/m365-copilot-privacy-posture.mjs`)
+- data minimization and PII redaction policy contract (`privacy/data-minimization-contract.mjs`)
+- overshare detection contracts for ingestion scanning, query exposure scoring, and deterministic throttle/suspend workflows (`overshare/overshare-detection.mjs`)
+- overshare incident priority scoring and triage queue contract (`overshare/incident-priority-contract.mjs`)
+- access anomaly triage contract for deterministic identity anomaly severity and playbook response mapping (`permissions/access-anomaly-triage-contract.mjs`)
+- prompt-injection signal contract for deterministic unsafe prompt risk scoring and containment actions (`overshare/prompt-injection-signal-contract.mjs`)
+- SIEM integration contracts for governance decisions, overshare incidents, alert routing, and typed revocation/containment playbooks (`siem/siem-integration.mjs`)
+
+Next:
+
+- connect SIEM outputs into downstream dashboards and tenant-level incident reporting surfaces

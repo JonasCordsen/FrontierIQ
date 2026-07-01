@@ -2,4 +2,37 @@
 
 Purpose: implement usage visibility, agent activity ingestion, and performance signal processing.
 
-TODO: add data ingestion modules, Graph API queries, telemetry collectors, and tests.
+Implemented foundation (Phase 1 MVP):
+
+- canonical Microsoft AI solution taxonomy (`foundation/solution-taxonomy.mjs`)
+- normalized signal contract, runtime validation, and freshness rollups (`foundation/normalized-signal.mjs`)
+- adapter contract and strict mapping results (`adapters/types.mjs`)
+- focused adapters:
+  - M365 Copilot
+  - Copilot Studio
+  - Azure AI Foundry
+  - Fabric
+- adapter registry (`adapters/index.mjs`)
+- agent/skill registry builder, query helpers, and invocation rollups (`registry/agent-skill-registry.mjs`)
+- scenario library adapter for use-case ingestion and signal projection (`adapters/scenario-library.mjs`)
+- scenario library ingestion client/cycle/scheduler (`ingestion/scenario-library-ingestion.mjs`)
+- Fabric IQ registration, ontology/data agent contracts, NL2Ontology validation, semantic-model access checks, and region readiness summary (`integration/fabric-iq.mjs`)
+- Work IQ registration, OBO/delegated user-context access contracts, `WorkIQAgent.Ask` validation, and mail/calendar/Teams readiness checks (`integration/work-iq.mjs`)
+- runtime ingestion pipeline contracts for webhook, delta reconciliation, Blob/OneLake staging, Foundry handoff, and telemetry (`ingestion/runtime-pipeline.mjs`)
+- Foundry IQ connector contracts for knowledge base/index/source/query flows with ACL and Purview validation (`ingestion/foundry-iq-connector.mjs`)
+- API performance metrics normalization and summary contract for latency/throughput/resource utilization evidence (`api/performance-metrics-contract.mjs`)
+- signal quality gate contract for normalized signal validation thresholds and quality scoring (`ingestion/signal-quality-gate-contract.mjs`)
+- tenant insights API payload contract for unified trend/cost/performance briefing response (`api/tenant-insights-api-contract.mjs`)
+- tenant insights diff contract for deterministic payload change deltas (`api/tenant-insights-diff-contract.mjs`)
+- source health scoring and outage classification contract for ingestion sources (`ingestion/source-health-contract.mjs`)
+- multi-tenant fairness guard contract for cross-tenant prioritization distribution and blocker evidence (`graph/multi-tenant-fairness-guard-contract.mjs`)
+- signal lineage contract for source-to-action graph coverage and unresolved-link evidence (`ingestion/signal-lineage-contract.mjs`)
+- operational SLO contract for target compliance, burn-rate classification, and breach alert outputs (`api/operational-slo-contract.mjs`)
+- ingestion replay recovery contract for replay-window planning, dedupe safety checks, and backlog-clearance evidence (`ingestion/ingestion-replay-recovery-contract.mjs`)
+- current-state view contract and local CLI wrapper for deterministic cross-pillar state snapshots (`api/current-state-view-contract.mjs`, `api/current-state-view-cli.mjs`)
+
+Run unit tests:
+
+```bash
+node --test tests/observe/*.test.mjs
+```
