@@ -15,12 +15,12 @@ jobs:
     timeout-minutes: 20
     steps:
       - name: Checkout
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
           persist-credentials: false
 
       - name: Setup Node
-        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
           node-version: 22
 
@@ -33,7 +33,7 @@ jobs:
           node --input-type=module -e "import { buildOpenApiPublicationBundle } from './src/optimize/delivery/openapi-publication-contract.mjs'; const bundle = buildOpenApiPublicationBundle({ generatedAt: '1970-01-01T00:00:00.000Z' }); await import('node:fs/promises').then(fs => fs.writeFile('artifacts/frontieriq-openapi.json', bundle.artifact.content, 'utf8')); await import('node:fs/promises').then(fs => fs.writeFile('artifacts/frontieriq-openapi-summary.json', JSON.stringify(bundle.summary, null, 2), 'utf8'));"
 
       - name: Upload release artifacts
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: frontieriq-release-artifacts
           path: artifacts/
