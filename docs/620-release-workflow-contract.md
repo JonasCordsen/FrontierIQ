@@ -11,7 +11,6 @@ Defines tagged-release CI behavior for validation and artifact publication.
 ## Trigger
 
 - `push` on tags matching `v*`
-- `workflow_dispatch`
 
 ## Steps
 
@@ -22,9 +21,16 @@ Defines tagged-release CI behavior for validation and artifact publication.
 5. Upload artifacts:
    - `artifacts/frontieriq-openapi.json`
    - `artifacts/frontieriq-openapi-summary.json`
+6. Retain workflow artifacts for 30 days
+
+## Hardening notes
+
+- Uses workflow-level `contents: read` permissions
+- Pins third-party actions to full commit SHAs
+- Disables persisted checkout credentials
+- Accepts release validation only from matching tag pushes
 
 ## Why
 
 Ensures tagged releases are test-validated and include machine-consumable API
 artifacts.
-

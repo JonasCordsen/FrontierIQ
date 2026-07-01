@@ -14,11 +14,13 @@ to `main` and direct pushes to `main`.
 1. Trigger on `pull_request` to `main`
 2. Trigger on `push` to `main`
 3. Support manual `workflow_dispatch`
-4. Use Node 22
-5. Run `node --test`
+4. Use workflow-level `contents: read` permissions
+5. Pin third-party actions to full commit SHAs
+6. Disable persisted checkout credentials
+7. Use Node 22
+8. Run `node --test`
 
 ## Why this matters
 
 This provides deterministic build validation for every change set and keeps the
 contract-first architecture guarded by automated tests.
-

@@ -65,6 +65,7 @@ Current design set:
 - `600-tenant-api-smoke-fixture-runner.md` - deterministic smoke fixture runner for tenant API list/get/upsert/readiness
 - `610-openapi-publication-contract.md` - OpenAPI artifact publication contract and summary generation
 - `620-release-workflow-contract.md` - tag-triggered release workflow with full tests and OpenAPI artifact upload
+- `625-codeql-analysis-workflow.md` - CodeQL scanning workflow with scheduled and pull-request coverage
 - `630-http-runtime-adapter.md` - executable request pipeline contract binding route resolution, auth checks, dispatch, and telemetry
 - `640-tenant-repository-persistence-adapter.md` - deterministic tenant repository snapshot serialization/deserialization contract
 - `650-cli-smoke-command-contract.md` - deterministic CLI contract for local tenant API smoke execution
