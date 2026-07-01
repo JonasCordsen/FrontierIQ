@@ -6,7 +6,7 @@ import { Card, CardHeader, CardFooter } from '@fluentui/react-components';
 export default function Dashboard() {
   const [state, setState] = useState<any>(null);
   const { instance, accounts } = useMsal();
-  const account = accounts && accounts.length > 0 ? accounts[0] : null;
+  const account = accounts && accounts.length > 0 ? accounts[0] : undefined;
 
   useEffect(() => {
     let mounted = true;

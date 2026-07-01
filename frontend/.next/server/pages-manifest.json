@@ -1,0 +1,9 @@
+{
+  "/": "pages/index.html",
+  "/_app": "pages/_app.js",
+  "/_document": "pages/_document.js",
+  "/_error": "pages/_error.js",
+  "/api/current-state": "pages/api/current-state.js",
+  "/api/protected-current-state": "pages/api/protected-current-state.js",
+  "/404": "pages/404.html"
+}
