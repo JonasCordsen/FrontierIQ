@@ -99,7 +99,7 @@ jobs:
           api_location: 'frontend/.next'
           output_location: 'frontend/.next/static'
           skip_app_build: true
-          skip_api_build: true
+          skip_deploy_on_missing_secrets: true
 
   deploy-production:
     needs: build-and-validate
@@ -142,7 +142,7 @@ jobs:
           api_location: 'frontend/.next'
           output_location: 'frontend/.next/static'
           skip_app_build: true
-          skip_api_build: true
+          skip_deploy_on_missing_secrets: true
 
       - name: Comment on commit
         if: success()
