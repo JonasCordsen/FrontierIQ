@@ -96,8 +96,8 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: 'upload'
           app_location: 'frontend'
-          api_location: 'frontend/.next'
-          output_location: 'frontend/.next/static'
+          api_location: '.next'
+          output_location: '.next/static'
           skip_app_build: true
           skip_deploy_on_missing_secrets: true
 
@@ -139,8 +139,8 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: 'upload'
           app_location: 'frontend'
-          api_location: 'frontend/.next'
-          output_location: 'frontend/.next/static'
+          api_location: '.next'
+          output_location: '.next/static'
           skip_app_build: true
           skip_deploy_on_missing_secrets: true
 
