@@ -17,5 +17,4 @@ NEXT_PUBLIC_AZURE_CLIENT_ID=<your-client-id>
 NEXT_PUBLIC_AZURE_TENANT_ID=<your-tenant-id>
 NEXT_PUBLIC_AZURE_REDIRECT_URI=http://localhost:3000
 ```
-
 - The API route /api/current-state returns a sample snapshot — wire this to the backend or the CLI viewer for real data.
