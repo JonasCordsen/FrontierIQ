@@ -25,6 +25,9 @@ OBSERVE — normalized signal ingestion + adapter layer
 ```
 
 All data access is on-demand. No raw tenant payload is stored permanently.
+FrontierIQ may persist its own control-plane metadata (for example tenant
+registry, RBAC mappings, waiver state, and refresh checkpoints) without
+persisting customer-source raw payloads.
 
 ---
 
@@ -188,7 +191,9 @@ Adapter result contract: `{ ok: true, signals } | { ok: false, code, errors }`. 
 
 ## Key design decisions
 
-1. **No persistent customer data.** All processing is on-demand per tenant. Raw payloads are never stored.
+1. **No persistent customer data.** All processing is on-demand per tenant.
+   Raw source payloads are never stored. Only FrontierIQ-owned control-plane
+   metadata and derived evidence summaries may be persisted when needed.
 2. **Deterministic contracts.** Every module exports pure functions with explicit validated inputs and outputs. No implicit side effects.
 3. **Fail-closed readiness.** Every readiness summary defaults to `blocked` unless all required checks pass.
 4. **Single-tenant and multi-tenant from the start.** Every signal and contract carries `tenantId`.
@@ -221,4 +226,3 @@ node --test
 ```
 
 155 tests, 0 failures as of 2026-06-24.
-
