@@ -1,0 +1,20 @@
+{
+  "name": "frontieriq-webui",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3000",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "^14.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "@fluentui/react-components": "^9.0.0",
+    "@azure/msal-browser": "^2.40.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.0"
+  }
+}
