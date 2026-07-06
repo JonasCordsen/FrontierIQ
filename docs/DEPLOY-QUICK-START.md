@@ -24,7 +24,7 @@ az staticwebapp create \
   --location eastus \
   --branch main \
   --app-location frontend \
-  --output-location ".next/static"
+  --output-location ".next"
 ```
 
 ### 3. Get Deployment Token
@@ -80,21 +80,20 @@ Go to: Repository → Actions tab
 
 ## 🧪 Test Protected API
 
-Once deployed, test the protected API with a real Entra token:
+Once deployed, test the protected API through SWA auth:
 
 ```bash
-# Get a test token from your Entra app
-TOKEN=$(az account get-access-token --query accessToken -o tsv)
+# Sign in via SWA auth endpoint
+open "https://<your-static-web-app-url>/.auth/login/aad"
 
-# Call the protected endpoint
-curl -H "Authorization: Bearer $TOKEN" \
-  https://<your-static-web-app-url>/api/protected-current-state
+# Then call the protected endpoint (browser session cookie is used)
+curl -i https://<your-static-web-app-url>/api/protected-current-state
 ```
 
 Expected responses:
-- ✅ **200 OK**: Token valid, has FrontierIQ.Admin role
-- ❌ **401 Unauthorized**: Invalid token or expired
-- ❌ **403 Forbidden**: Valid token but missing FrontierIQ.Admin role
+- ✅ **200 OK**: Signed in user passed tenant RBAC checks
+- ❌ **401 Unauthorized**: User not signed in
+- ❌ **403 Forbidden**: Signed in but tenant RBAC denied
 
 ## 🐛 Common Issues
 
@@ -102,7 +101,7 @@ Expected responses:
 |-------|-----|
 | Build fails: "NEXT_PUBLIC_AZURE_TENANT_ID not defined" | Check GitHub secrets are set |
 | Deployment fails: "API token invalid" | Refresh token from Azure Portal |
-| Protected API returns 401 | Verify token has FrontierIQ.Admin role claim |
+| Protected API returns 401 | Sign in via `/.auth/login/aad` and retry |
 | Logs show secrets in plain text | Recreate GitHub secrets (old ones may not be masked) |
 
 ## 📚 Documentation

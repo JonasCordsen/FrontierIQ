@@ -1,4 +1,27 @@
 {
+  "routes": [
+    {
+      "route": "/api/protected-current-state",
+      "allowedRoles": ["authenticated"]
+    }
+  ],
+  "responseOverrides": {
+    "401": {
+      "redirect": "/.auth/login/aad",
+      "statusCode": 302
+    }
+  },
+  "auth": {
+    "identityProviders": {
+      "azureActiveDirectory": {
+        "registration": {
+          "openIdIssuer": "https://login.microsoftonline.com/37732f27-626b-4ead-bb86-76f576b129b1/v2.0",
+          "clientIdSettingName": "NEXT_PUBLIC_AZURE_CLIENT_ID",
+          "clientSecretSettingName": "AZURE_CLIENT_SECRET"
+        }
+      }
+    }
+  },
   "platform": {
     "apiRuntime": "node:22"
   }

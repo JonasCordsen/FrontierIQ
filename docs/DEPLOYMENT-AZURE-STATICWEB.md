@@ -23,14 +23,14 @@ az staticwebapp create \
   --location eastus \
   --branch jonascordsen-scaffold-src-structure \
   --app-location frontend \
-  --output-location ".next/static" \
+  --output-location ".next" \
   --skip-api-build true
 ```
 
 **Notes:**
 - Replace `--branch` with your deployment branch (e.g., `main` for production)
 - `--app-location` points to the frontend folder
-- `--output-location` points to Next.js static output
+- `--output-location` points to the full Next.js build output
 - `--skip-api-build` because we handle Next.js build via GitHub Actions
 
 ### Option B: Using Azure Portal
@@ -48,7 +48,7 @@ az staticwebapp create \
    - **Build presets**: Custom
    - **App location**: `frontend`
    - **API location**: (leave blank if using Next.js built-in API routes)
-   - **Output location**: `.next/static`
+   - **Output location**: `.next`
 4. Click **Create**
 
 After creation, Azure will generate a deployment token.
