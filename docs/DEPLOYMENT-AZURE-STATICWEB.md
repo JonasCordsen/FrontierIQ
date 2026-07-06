@@ -94,7 +94,7 @@ Edit `.github/workflows/deploy-webui.yml`:
 
 - **Main branch trigger**: Change `branches: [main]` if your production branch is different
 - **Paths filter**: Customize which file changes trigger deployments
-- **Node version**: Change `NODE_VERSION: '18'` if needed
+- **Node version**: Change `NODE_VERSION: '24'` if needed
 
 ## Step 4: Test Deployment
 
