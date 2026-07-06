@@ -1,4 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
+import path from 'node:path';
+import { access } from 'node:fs/promises';
+import { pathToFileURL } from 'node:url';
 import { jwtVerify, createRemoteJWKSet } from 'jose';
 import {
   extractUserContext,
@@ -25,6 +28,29 @@ function getJWKS() {
     jwksCache = createRemoteJWKSet(new URL(jwksUri));
   }
   return jwksCache;
+}
+
+async function loadCurrentStateContractModule() {
+  const candidatePaths = [
+    path.resolve(process.cwd(), '..', 'src', 'observe', 'api', 'current-state-view-contract.mjs'),
+    path.resolve(process.cwd(), 'src', 'observe', 'api', 'current-state-view-contract.mjs'),
+  ];
+
+  for (const candidatePath of candidatePaths) {
+    try {
+      await access(candidatePath);
+      return await import(pathToFileURL(candidatePath).href);
+    } catch (err) {
+      const error = err as NodeJS.ErrnoException;
+      if (error.code !== 'ENOENT') {
+        throw error;
+      }
+    }
+  }
+
+  throw new Error(
+    `Current-state contract module not found in expected locations: ${candidatePaths.join(', ')}`
+  );
 }
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -129,8 +155,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   // Build snapshot with tenant context
   // Pass user context and tenant info to the contract executor
   try {
-    // @ts-ignore - dynamic import of .mjs file without type declarations
-    const mod = await import('../../../src/observe/api/current-state-view-contract.mjs');
+    const mod = await loadCurrentStateContractModule();
 
     // Build snapshot with tenant-specific context
     const result = mod.executeCurrentStateViewCommand(['--json'], {
