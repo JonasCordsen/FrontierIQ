@@ -158,14 +158,24 @@ Edit `.github/workflows/deploy-webui.yml`:
 2. Copy the new token (old one may have been rotated)
 3. Update GitHub secret
 
-### Protected API Returns 401 in Deployed Environment
+### Deployment Fails: "`auth` configuration is only supported on the Standard SKU"
 
-**Cause**: MSAL token validation fails (wrong tenant/client ID).
+**Cause**: The current Static Web App is on the **Free** SKU, and Free does not support the custom `auth` block in `staticwebapp.config.json`.
 
 **Fix**:
-1. Verify NEXT_PUBLIC_AZURE_TENANT_ID matches Entra tenant ID
-2. Verify NEXT_PUBLIC_AZURE_CLIENT_ID matches app registration
-3. Test with a real Entra token (use Azure CLI: `az account get-access-token`)
+1. Remove the `auth` block from `frontend/staticwebapp.config.json`
+2. Keep route protection such as `"allowedRoles": ["authenticated"]` and the `401` redirect override
+3. Upgrade the Static Web App to **Standard** only if you need provider registration managed inside the config file
+
+### Protected API Returns 401 in Deployed Environment
+
+**Cause**: No authenticated SWA session is present, or the fallback bearer-token path is using the wrong tenant/client ID.
+
+**Fix**:
+1. Sign in via `/.auth/login/aad`
+2. Verify NEXT_PUBLIC_AZURE_TENANT_ID matches Entra tenant ID
+3. Verify NEXT_PUBLIC_AZURE_CLIENT_ID matches app registration
+4. If testing the fallback bearer-token path, use a real Entra token (for example via Azure CLI)
 
 ### OBO Exchange Fails in Deployed Environment
 

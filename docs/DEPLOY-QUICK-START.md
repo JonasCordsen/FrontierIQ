@@ -107,12 +107,15 @@ Expected responses:
 - ❌ **401 Unauthorized**: User not signed in
 - ❌ **403 Forbidden**: Signed in but tenant RBAC denied
 
+> **Free SKU note:** `staticwebapp.config.json` can use route authorization and `401` redirects on Free, but the custom `auth` block is **not** supported. If you want provider registration in config, upgrade the Static Web App to **Standard**.
+
 ## 🐛 Common Issues
 
 | Issue | Fix |
 |-------|-----|
 | Build fails: "NEXT_PUBLIC_AZURE_TENANT_ID not defined" | Check GitHub secrets are set |
 | Deployment fails: "API token invalid" | Refresh token from Azure Portal |
+| Deployment fails saying the `auth` block is only supported on Standard SKU | Remove the `auth` block from `frontend/staticwebapp.config.json` or upgrade the Static Web App to Standard |
 | Protected API returns 401 | Sign in via `/.auth/login/aad` and retry |
 | Logs show secrets in plain text | Recreate GitHub secrets (old ones may not be masked) |
 
