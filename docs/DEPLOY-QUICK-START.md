@@ -14,14 +14,26 @@ This is a quick checklist for getting the web UI deployed. See `docs/DEPLOYMENT-
 # - Client Secret (create new secret if needed)
 ```
 
-### 2. Create Azure Static Web Apps Resource
+### 2. Azure Static Web Apps Resource (already provisioned)
+
+The SWA resource is already created:
+
+| Field | Value |
+|-------|-------|
+| **Name** | `stapp-fiq-web-dev-weu-1` |
+| **Resource Group** | `rg-ai-fmp-dev-sdc-1` |
+| **Location** | West Europe |
+| **Hostname** | `mango-moss-01376e203.7.azurestaticapps.net` |
+| **Subscription** | `da748815-170a-46fc-841c-7f016bfd5db9` |
+
+To create an additional environment from scratch:
 
 ```bash
 az staticwebapp create \
-  --name frontieriq-web \
-  --resource-group frontieriq-rg \
+  --name stapp-fiq-web-dev-weu-1 \
+  --resource-group rg-ai-fmp-dev-sdc-1 \
   --source https://github.com/JonasCordsen/FrontierIQ.git \
-  --location eastus \
+  --location westeurope \
   --branch main \
   --app-location frontend \
   --output-location ".next"
@@ -31,7 +43,7 @@ az staticwebapp create \
 
 ```bash
 # From Azure Portal or CLI:
-az staticwebapp secrets list --name frontieriq-web --resource-group frontieriq-rg
+az staticwebapp secrets list --name stapp-fiq-web-dev-weu-1 --resource-group rg-ai-fmp-dev-sdc-1
 # Copy the deployment token
 ```
 
@@ -84,10 +96,10 @@ Once deployed, test the protected API through SWA auth:
 
 ```bash
 # Sign in via SWA auth endpoint
-open "https://<your-static-web-app-url>/.auth/login/aad"
+open "https://mango-moss-01376e203.7.azurestaticapps.net/.auth/login/aad"
 
 # Then call the protected endpoint (browser session cookie is used)
-curl -i https://<your-static-web-app-url>/api/protected-current-state
+curl -i https://mango-moss-01376e203.7.azurestaticapps.net/api/protected-current-state
 ```
 
 Expected responses:

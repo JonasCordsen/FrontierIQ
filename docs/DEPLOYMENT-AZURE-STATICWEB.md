@@ -11,17 +11,29 @@ This guide walks through setting up GitHub Actions CI/CD to build and deploy the
   - `NEXT_PUBLIC_AZURE_CLIENT_ID` (client/app ID)
   - `AZURE_CLIENT_SECRET` (client secret; server-side only)
 
-## Step 1: Create Azure Static Web Apps Resource
+## Step 1: Azure Static Web Apps Resource (already provisioned)
+
+The SWA resource for the dev environment is already created:
+
+| Field | Value |
+|-------|-------|
+| **Name** | `stapp-fiq-web-dev-weu-1` |
+| **Resource Group** | `rg-ai-fmp-dev-sdc-1` |
+| **Location** | West Europe |
+| **Hostname** | `mango-moss-01376e203.7.azurestaticapps.net` |
+| **Subscription** | `da748815-170a-46fc-841c-7f016bfd5db9` |
+
+To create an additional environment from scratch:
 
 ### Option A: Using Azure CLI
 
 ```bash
 az staticwebapp create \
-  --name frontieriq-web \
-  --resource-group frontieriq-rg \
+  --name stapp-fiq-web-dev-weu-1 \
+  --resource-group rg-ai-fmp-dev-sdc-1 \
   --source https://github.com/JonasCordsen/FrontierIQ.git \
-  --location eastus \
-  --branch jonascordsen-scaffold-src-structure \
+  --location westeurope \
+  --branch main \
   --app-location frontend \
   --output-location ".next" \
   --skip-api-build true
@@ -38,13 +50,13 @@ az staticwebapp create \
 1. Navigate to **Static Web Apps** in the Azure Portal
 2. Click **Create**
 3. Fill in:
-   - **Resource Group**: Create new or use existing
-   - **Name**: `frontieriq-web` (or your choice)
-   - **Region**: East US (or nearest region)
+   - **Resource Group**: `rg-ai-fmp-dev-sdc-1`
+   - **Name**: `stapp-fiq-web-dev-weu-1` (or your choice)
+   - **Region**: West Europe
    - **Source**: GitHub
    - **Organization**: Your GitHub username
    - **Repository**: FrontierIQ
-   - **Branch**: jonascordsen-scaffold-src-structure
+   - **Branch**: main
    - **Build presets**: Custom
    - **App location**: `frontend`
    - **API location**: (leave blank if using Next.js built-in API routes)
