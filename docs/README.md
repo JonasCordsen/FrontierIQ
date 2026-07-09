@@ -103,3 +103,5 @@ Current design set:
 - `970-ingestion-replay-recovery-contract.md` - deterministic ingestion replay window planning, dedupe checks, and backlog-clearance evidence contract
 - `980-recommendation-impact-simulation-contract.md` - deterministic coach-action impact simulation across baseline KPIs
 - `990-current-state-view-contract.md` - deterministic local command contract to view current cross-pillar state
+- `1000-backend-persistence-decision.md` - persistence direction for the web/API control plane, recommending Cosmos DB serverless for tenant-scoped operational metadata while keeping raw tenant payloads out of storage
+- `1010-cosmos-tenant-repository.md` - deterministic Cosmos DB mapping/query contract for tenant repository persistence
